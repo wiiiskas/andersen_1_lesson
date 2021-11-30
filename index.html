@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First lesson</title>
+</head>
+<body>
+    <h1>LESSON 1</h1>
+    <button onclick="first()">Первое задание</button>
+    <button onclick="second()">Второе задание</button>
+
+    <script>
+        const ERROR_MESSAGE = 'Некорректный ввод';
+        const FIRST_NUMBER_MESSAGE = 'Введите первое число';
+        const SECOND_NUMBER_MESSAGE = 'Введите второе число';
+        const NOTATION_MESSAGE = 'Введите систему счисления';
+        
+        function isInteger(stringFromPrompt) {
+                const number = Number(stringFromPrompt);
+                if(Number.isInteger(number)) return number; 
+                else throw ERROR_MESSAGE;
+        }
+
+        function first() {
+            try{
+                console.log(isInteger(Number(prompt(FIRST_NUMBER_MESSAGE))
+                        .toString(Number(isInteger(prompt(NOTATION_MESSAGE))))));
+            }catch(error){
+                console.log(ERROR_MESSAGE);
+            }
+              
+        };
+        function second() {
+            try{
+                const firstNumber = isInteger(prompt(FIRST_NUMBER_MESSAGE));
+                const secondNumber = isInteger(prompt(SECOND_NUMBER_MESSAGE));
+                console.log(`${firstNumber + secondNumber}, ${firstNumber / secondNumber}`); 
+            }catch(error){ 
+                console.log(ERROR_MESSAGE);
+            }
+        }
+    </script>
+</body>
+</html>
