@@ -19,7 +19,7 @@
         
         function isInteger(stringFromPrompt) {
                 const number = Number(stringFromPrompt);
-                if(Number.isInteger(number)) return number; 
+                if(number && Number.isInteger(number)) return number; 
                 else throw ERROR_MESSAGE;
         }
 
